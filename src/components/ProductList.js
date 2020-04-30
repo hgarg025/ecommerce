@@ -4,6 +4,7 @@ import ProductScreen from '../screens/ProductScreen';
 import { withNavigation } from 'react-navigation';
 import SoldScreen from '../screens/SoldScreen';
 import OrderScreen from '../screens/OrderScreen';
+//comment
 
 const ProductList = ( {title, navigation}) => {
 
