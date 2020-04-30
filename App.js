@@ -1,19 +1,25 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
- // CHANGE
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+import SearchScreen from './src/screens/SearchScreen';
+import ProductScreen from './src/screens/ProductScreen';
+import SoldScreen from './src/screens/SoldScreen';
+import OrderScreen from './src/screens/OrderScreen';
+import AddProductScreen from './src/screens/AddProductScreen';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const navigator = createStackNavigator(
+{
+   Search : SearchScreen,
+   Product : ProductScreen,
+   Sold : SoldScreen,
+   Order : OrderScreen,
+   AddProduct : AddProductScreen
+},
+{
+   initialRouteName: 'Search',
+   defaultNavigationOptions: {
+    title: 'CSK 2010 2011 2018'
+   }
+}
+  );
+
+export default createAppContainer(navigator);
