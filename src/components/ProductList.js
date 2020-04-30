@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 		margin: 20
   },
   matter: {
-   fontSize: 30,
+   fontSize: 65,
    margin: 20
   }
 });

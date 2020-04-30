@@ -4,13 +4,15 @@ import SearchScreen from './src/screens/SearchScreen';
 import ProductScreen from './src/screens/ProductScreen';
 import SoldScreen from './src/screens/SoldScreen';
 import OrderScreen from './src/screens/OrderScreen';
+import AddProductScreen from './src/screens/AddProductScreen';
 
 const navigator = createStackNavigator(
 {
    Search : SearchScreen,
    Product : ProductScreen,
    Sold : SoldScreen,
-   Order : OrderScreen
+   Order : OrderScreen,
+   AddProduct : AddProductScreen
 },
 {
    initialRouteName: 'Search',

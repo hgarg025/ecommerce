@@ -1,14 +1,21 @@
 import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import { ScrollView, Text, StyleSheet} from 'react-native';
+import Categories from '../components/Categories';
 
 const ProductScreen = () => {
 	return(
-    <View>
-    <Text>Product Screen</Text>
-    </View>
+    <ScrollView>
+    <Categories title = "category 1"/>
+    <Categories title = "category 2"/>
+    <Categories title = "category 3"/>
+    <Categories title = "category 4"/>
+    <Categories title = "category 5"/>
+    </ScrollView>
 	);
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+
+});
 
 export default ProductScreen;

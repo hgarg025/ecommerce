@@ -17,12 +17,13 @@ const SearchScreen = () => {
 const styles = StyleSheet.create({
 	slider : {
 		borderColor: 'red',
-		borderWidth: 2
+		borderWidth: 2,
+		margin: 20
 	},
 	basic: {
 		flex: 1,
 		justifyContent: 'space-between',
-		margin: 70
+		marginBottom: 100
 	}
 
 });
