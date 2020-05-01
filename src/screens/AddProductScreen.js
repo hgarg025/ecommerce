@@ -2,6 +2,7 @@ import React , {useState} from 'react';
 import { Button, View, Text, StyleSheet, TextInput, Image} from 'react-native';
 import {Input} from 'react-native-elements';
 import DatePicker from '../components/DatePicker';
+<<<<<<< HEAD
 import ImageScreen from './ImageScreen';
 import {withNavigation} from 'react-navigation';
 

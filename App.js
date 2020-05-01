@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import SearchScreen from './src/screens/SearchScreen';
+import HomeScreen from './src/screens/HomeScreen';
 import ProductScreen from './src/screens/ProductScreen';
 import SoldScreen from './src/screens/SoldScreen';
 import OrderScreen from './src/screens/OrderScreen';
@@ -9,12 +9,11 @@ import ImageScreen from './src/screens/ImageScreen';
 
 const navigator = createStackNavigator(
 {
-   Search : SearchScreen,
-   Product : ProductScreen,
+   Search : HomeScreen,
+   Products : ProductScreen,
    Sold : SoldScreen,
-   Order : OrderScreen,
-   AddProduct : AddProductScreen,
-   Image : ImageScreen
+   Orders : OrderScreen,
+   AddProduct : AddProductScreen
 },
 {
    initialRouteName: 'Search',
