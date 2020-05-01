@@ -3,7 +3,7 @@ import { View, Text, StyleSheet} from 'react-native';
 import { Slider } from 'react-native-elements';
 import ProductList from '../components/ProductList';
 
-const HomeScreen = () => {
+const SearchScreen = () => {
     return(
     <View style={styles.basic} >
     <ProductList title="Products" />
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default HomeScreen;
+export default SearchScreen;
