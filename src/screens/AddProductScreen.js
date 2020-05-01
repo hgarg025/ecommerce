@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 import { View, Text, StyleSheet, TextInput, Image} from 'react-native';
 import {Input} from 'react-native-elements';
 import DatePicker from '../components/DatePicker';
-
+//import ImagePickerExample from '../components/ImagePicker'
 const AddProductScreen = () => {
 	return(
     <View>
@@ -15,6 +15,7 @@ const AddProductScreen = () => {
     <Input placeholder='Quantity' />
     <Text>Expiry Date</Text>
     <DatePicker />
+   // <ImagePickerExample/>
     </View>
     );
 }
