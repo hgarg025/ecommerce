@@ -6,7 +6,6 @@ import AddProduct from '../screens/AddProductScreen';
 import CategoryProducts from './CategoryProducts';
 
 const Categories = ({title, navigation}) => {
-    const [name,setName]=useState('productname');
     return(
     <View>  
     <View style={styles.components}>
@@ -15,7 +14,7 @@ const Categories = ({title, navigation}) => {
     <AntDesign name="pluscircle" size={20}/>
     </TouchableOpacity>
     </View>
-    <CategoryProducts pname={name}/>
+    <CategoryProducts />
     </View>
     );
 }

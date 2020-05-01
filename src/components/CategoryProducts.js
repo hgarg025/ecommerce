@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 
-const CategoryProducts = ({pname}) => {
+const CategoryProducts = () => {
 	return(
     <View>
-    <Text>{pname}</Text>
+    <Text>product name</Text>
     </View>
 	);
 }

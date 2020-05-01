@@ -8,7 +8,7 @@ import AddProductScreen from './src/screens/AddProductScreen';
 import ImageSelect from './src/components/ImageSelect'
 const navigator = createStackNavigator(
 {
-   Search : HomeScreen,
+   Home : HomeScreen,
    Products : ProductScreen,
    Sold : SoldScreen,
    Orders : OrderScreen,
@@ -17,7 +17,7 @@ const navigator = createStackNavigator(
  
 },
 {
-   initialRouteName: 'Search',
+   initialRouteName: 'Home',
    defaultNavigationOptions: {
     title: 'CSK 2010 2011 2018'
    }
