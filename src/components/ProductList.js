@@ -7,24 +7,26 @@ import OrderScreen from '../screens/OrderScreen';
 
 const ProductList = ( {title, navigation}) => {
 
-    const screendecider = (title) => {
-      if(title == 'Products')
-      {
-      	navigation.navigate('Product');
-      }
-      else if(title == 'Sold')
-      {
-      	navigation.navigate('Sold');
-      }
-      else 
-      	navigation.navigate('Order');
-    };
+    // const screendecider = (title) => {
+    //   if(title == 'Products')
+    //   {
+    //   	navigation.navigate('Product');
+    //   }
+    //   else if(title == 'Sold')
+    //   {
+    //   	navigation.navigate('Sold');
+    //   }
+    //   else 
+    //   	navigation.navigate('Order');
+    // };
 
 	return(
     <View style={styles.components} >
-    <TouchableOpacity onPress ={() => screendecider(title)} >
-    <Text style={styles.matter} >{title}</Text>
-    </TouchableOpacity>
+      <TouchableOpacity onPress = {function(){
+        navigation.navigate(title);
+      }}>
+        <Text style={styles.matter} >{title}</Text>
+      </TouchableOpacity>
     </View>
 	);
 };
