@@ -1,12 +1,14 @@
 import React , {useState} from 'react';
-import { View, Text, StyleSheet, TextInput, Image} from 'react-native';
+import { Button, View, Text, StyleSheet, TextInput, Image} from 'react-native';
 import {Input} from 'react-native-elements';
 import DatePicker from '../components/DatePicker';
+import ImageScreen from './ImageScreen';
+import {withNavigation} from 'react-navigation';
 
-const AddProductScreen = () => {
+const AddProductScreen = ({navigation}) => {
 	return(
-    <View>
-    <Image />
+		<View>
+    <Button onPress={() => navigation.navigate('Image')} title="Add Image" />
     <Text>Product Name</Text>
     <Input placeholder='Product Name' />
     <Text>Product Price (in Rupees)</Text>
@@ -23,4 +25,4 @@ const styles = StyleSheet.create({
 	
 });
 
-export default AddProductScreen;
+export default withNavigation(AddProductScreen);

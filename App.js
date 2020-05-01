@@ -5,6 +5,7 @@ import ProductScreen from './src/screens/ProductScreen';
 import SoldScreen from './src/screens/SoldScreen';
 import OrderScreen from './src/screens/OrderScreen';
 import AddProductScreen from './src/screens/AddProductScreen';
+import ImageScreen from './src/screens/ImageScreen';
 
 const navigator = createStackNavigator(
 {
@@ -12,7 +13,8 @@ const navigator = createStackNavigator(
    Product : ProductScreen,
    Sold : SoldScreen,
    Order : OrderScreen,
-   AddProduct : AddProductScreen
+   AddProduct : AddProductScreen,
+   Image : ImageScreen
 },
 {
    initialRouteName: 'Search',
