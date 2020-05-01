@@ -5,14 +5,15 @@ import ProductScreen from './src/screens/ProductScreen';
 import SoldScreen from './src/screens/SoldScreen';
 import OrderScreen from './src/screens/OrderScreen';
 import AddProductScreen from './src/screens/AddProductScreen';
-
+import ImageSelect from './src/components/ImageSelect'
 const navigator = createStackNavigator(
 {
    Search : HomeScreen,
    Products : ProductScreen,
    Sold : SoldScreen,
    Orders : OrderScreen,
-   AddProduct : AddProductScreen
+   AddProduct : AddProductScreen,
+   Camera: ImageSelect
  
 },
 {

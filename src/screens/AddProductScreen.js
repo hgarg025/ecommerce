@@ -1,12 +1,13 @@
 import React , {useState} from 'react';
-import { View, Text, StyleSheet, TextInput, Image} from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image,Button} from 'react-native';
 import {Input} from 'react-native-elements';
 import DatePicker from '../components/DatePicker';
-//import ImagePickerExample from '../components/ImagePicker'
-const AddProductScreen = () => {
+import ImageSelect from '../components/ImageSelect'
+const AddProductScreen = ({navigation}) => {
 	return(
     <View>
-    <Image />
+    
+   
     <Text>Product Name</Text>
     <Input placeholder='Product Name' />
     <Text>Product Price (in Rupees)</Text>
@@ -15,7 +16,15 @@ const AddProductScreen = () => {
     <Input placeholder='Quantity' />
     <Text>Expiry Date</Text>
     <DatePicker />
-   // <ImagePickerExample/>
+    <Button
+        title ="Select Picture"
+        onPress = {function(){
+            navigation.navigate('Camera')
+        }}
+    />
+    
+    
+
     </View>
     );
 }

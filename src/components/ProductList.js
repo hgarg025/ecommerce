@@ -7,18 +7,6 @@ import OrderScreen from '../screens/OrderScreen';
 
 const ProductList = ( {title, navigation}) => {
 
-    // const screendecider = (title) => {
-    //   if(title == 'Products')
-    //   {
-    //   	navigation.navigate('Product');
-    //   }
-    //   else if(title == 'Sold')
-    //   {
-    //   	navigation.navigate('Sold');
-    //   }
-    //   else 
-    //   	navigation.navigate('Order');
-    // };
 
 	return(
     <View style={styles.components} >
