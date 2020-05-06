@@ -1,29 +1,30 @@
 import React from 'react'
-import {Text,View,FlatList,StyleSheet,TouchableOpacity} from 'react-native'
+import {Text,View,StyleSheet,TouchableOpacity,FlatList} from 'react-native'
 
 
-const ShopList = function({navigation}){
+const ByProduct = function({navigation}){
 
-    const shoplist = [
-        
-        {name: 'Shop #1',id: 1},
-        {name: 'Shop #2',id: 2},
-        {name: 'Shop #3',id: 3},
+    const prods = [
+        {name: 'prod1', id: 1},
+        {name: 'prod2', id: 2},
+        {name: 'prod3', id: 3},
+        {name: 'prod4', id: 4},
+        {name: 'prod5', id: 5},
     ]
-        
+
     return (
         <View>
         <FlatList
-            data = {shoplist}
-            keyExtractor = {function(shoplist){
-                return shoplist.name
+            data = {prods}
+            keyExtractor = {function(prods){
+                return prods.name
             }}
 
             renderItem = {function({item}){
                 return(
                     <TouchableOpacity
-                        onPress ={function(){
-                            navigation.navigate('ShopD')
+                        onPress={function(){
+                            navigation.navigate('ProductD')
                         }}
                     >
                         <View style = {{height:200,backgroundColor: 'grey'}}>
@@ -37,11 +38,10 @@ const ShopList = function({navigation}){
         </View>
 
     )
-
 }
 
 const styles = StyleSheet.create({
 
 })
 
-export default ShopList
+export default ByProduct
