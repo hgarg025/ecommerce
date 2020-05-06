@@ -6,6 +6,9 @@ import SoldScreen from './src/screens/SoldScreen';
 import OrderScreen from './src/screens/OrderScreen';
 import AddProductScreen from './src/screens/AddProductScreen';
 import ImageSelect from './src/components/ImageSelect'
+import IndexScreen from './src/screens/IndexScreen'
+import CustomerScreen from './src/screens/CustomerScreen'
+import ShopList from './src/screens/ShopList'
 const navigator = createStackNavigator(
 {
    Home : HomeScreen,
@@ -13,11 +16,15 @@ const navigator = createStackNavigator(
    Sold : SoldScreen,
    Orders : OrderScreen,
    AddProduct : AddProductScreen,
-   Camera: ImageSelect
+   Camera: ImageSelect,
+   Customer: CustomerScreen,
+   Index: IndexScreen,
+   Shops: ShopList,
+
  
 },
 {
-   initialRouteName: 'Home',
+   initialRouteName: 'Index',
    defaultNavigationOptions: {
     title: 'CSK 2010 2011 2018'
    }

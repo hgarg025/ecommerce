@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
-import { ImagePicker, Permissions } from 'expo';
-
+import { ImagePicker} from 'expo';
+import {Permissions} from 'expo-permissions'
 const ImageSelect = function(){
 
   state = {
