@@ -1,9 +1,10 @@
-import React from 'react';
+import React , {useContext} from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 import { Slider } from 'react-native-elements';
 import ProductList from '../components/ProductList';
 
 const HomeScreen = () => {
+
     return(
     <View style={styles.basic} >
     <ProductList title="Products" />

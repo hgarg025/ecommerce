@@ -1,10 +1,13 @@
-import React , {useState} from 'react';
+import React , {useState, useContext} from 'react';
 import { Button, View, Text, StyleSheet, TextInput, Image} from 'react-native';
 import {Input} from 'react-native-elements';
 import DatePicker from '../components/DatePicker';
 import {withNavigation} from 'react-navigation';
+import AppContext from '../context/AppContext';
 
 const AddProductScreen = ({navigation}) => {
+
+
 	return(
 	<View>
     <Text>Product Name</Text>
