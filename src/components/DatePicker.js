@@ -2,11 +2,14 @@ import React, {useState} from 'react';
 import {Text,View, Button, Platform} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-const DatePicker = () => {
-  const [date, setDate] = useState(new Date(1598051730000));
+const DatePicker = ({productEdate,setProductEdate}) => {
+  const [date, setDate] = useState(new Date(598051730000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
 
+ let d1 = date.toString();
+ let d2 = d1.substr(4,11); 
+ setProductEdate(d2);
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -39,7 +42,7 @@ const DatePicker = () => {
           onChange={onChange}
         />
       )}
-
+    <Text>{productEdate}</Text>
     </View>
   );
 };

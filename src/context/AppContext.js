@@ -1,12 +1,15 @@
-import React from 'react';
+import React , { useState} from 'react';
 
 const AppContext = React.createContext();
 
 
 export const AppProvider = ({children}) => {
-	return <AppContext.Provider value={5} >
+ const [productDetails, setProductDetails] = useState([{ name : '', price : '', quantity : '', edate : '', category : ''}]);
+
+ 
+	return <AppContext.Provider value={{productDetails , setProductDetails}}>
 	{children}
-	</AppContext.Provider>;
+	</AppContext.Provider>
 }
 
 export default AppContext;

@@ -1,10 +1,31 @@
-import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import React  from 'react';
+import { View, Text, StyleSheet,FlatList} from 'react-native';
 
-const CategoryProducts = () => {
-	return(
+
+const CategoryProducts = ({title,ProductDetails}) => {
+
+if(!ProductDetails.length){
+    	return null;
+    }
+ 
+ 	return(
     <View>
-    <Text>product name</Text>
+    <FlatList 
+    horizontal
+        showsHorizontalScrollIndicator={false}
+    data={ProductDetails}
+        keyExtractor={(ProductDetails) => ProductDetails.name}
+        renderItem={({ item }) => {
+            return (
+            <View>
+            <Text>{item.name}</Text>
+            <Text>{item.price}</Text>
+            <Text>{item.quantity}</Text>
+            <Text>{item.edate}</Text>
+            </View>
+            );
+        }}
+    />
     </View>
 	);
 }

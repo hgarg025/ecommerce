@@ -6,6 +6,8 @@ import SoldScreen from '../screens/SoldScreen';
 import OrderScreen from '../screens/OrderScreen';
 
 const ProductList = ( {title, navigation}) => {
+
+
 	return(
     <View style={styles.components} >
       <TouchableOpacity onPress = {function(){
