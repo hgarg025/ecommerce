@@ -40,6 +40,30 @@ const ShopList = function({navigation}){
 
 }
 
+ShopList.navigationOptions = function({navigation}){
+
+    return {
+        title: 'Shops',
+        headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+         
+          headerCenter: ()=> <TouchableOpacity
+            onPress ={ function(){
+                navigation.navigate('Cart')
+            }}
+        >
+            <Text>Click</Text>
+
+
+        </TouchableOpacity>
+
+    }
+}
 const styles = StyleSheet.create({
 
 })
