@@ -11,6 +11,9 @@ import ImageSelect from './src/components/ImageSelect'
 import IndexScreen from './src/screens/IndexScreen'
 import CustomerScreen from './src/screens/CustomerScreen'
 import ShopList from './src/screens/ShopList'
+import ByProduct from './src/screens/ByProduct'
+import ProductDetail from './src/screens/ProductDetail'
+import ShopDetail from './src/screens/ShopDetail'
 const navigator = createStackNavigator(
 {
    Home : HomeScreen,
@@ -22,6 +25,9 @@ const navigator = createStackNavigator(
    Customer: CustomerScreen,
    Index: IndexScreen,
    Shops: ShopList,
+   ByProd: ByProduct,
+   ShopD: ShopDetail,
+   ProductD: ProductDetail
 
  
 },
@@ -33,6 +39,7 @@ const navigator = createStackNavigator(
 }
   );
 
+
 const App = createAppContainer(navigator);
 
 export default () => {
@@ -40,3 +47,4 @@ export default () => {
   <App />
   </AppProvider>
 };
+

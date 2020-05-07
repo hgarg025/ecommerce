@@ -5,12 +5,16 @@ import ShopList from './ShopList';
 
 const CustomerScreen = function({navigation}){
 
+    const [screen,setScreen] = useState('Product')
     return (
         <View>
             <View style = {styles.topBar}>
 
                 <TouchableOpacity
                     style = {styles.topButtons}
+                    onPress  = {function(){
+                        navigation.navigate('ByProd')
+                    }}
                 >
                     <Text>
                         SEACRH BY PRODUCT
@@ -19,7 +23,9 @@ const CustomerScreen = function({navigation}){
 
                 <TouchableOpacity
                     style = {styles.topButtons}
-                    onPress  = {function(){ navigation.navigate('Shops')}}
+                    onPress  = {function(){
+                        navigation.navigate('Shops')
+                    }}
                 >
                     <View style ={{flexDirection: 'row'}}>
                         <Text style = {{paddingRight: 20,
@@ -31,6 +37,9 @@ const CustomerScreen = function({navigation}){
                     </View>
                 </TouchableOpacity>
             </View>
+   
+                <ShopList/>
+ 
         </View>
     )
 }
