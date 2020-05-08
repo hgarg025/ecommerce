@@ -4,7 +4,7 @@ const AppContext = React.createContext();
 
 
 export const AppProvider = ({children}) => {
- const [productDetails, setProductDetails] = useState([{ name : '', price : '', quantity : '', edate : '', category : ''}]);
+ const [productDetails, setProductDetails] = useState([{ name : '', price : '', quantity : '', edate : '', category : '', id : ''}]);
 
  
 	return <AppContext.Provider value={{productDetails , setProductDetails}}>

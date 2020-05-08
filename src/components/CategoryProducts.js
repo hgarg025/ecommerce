@@ -14,7 +14,7 @@ if(!ProductDetails.length){
     horizontal
         showsHorizontalScrollIndicator={false}
     data={ProductDetails}
-        keyExtractor={(ProductDetails) => ProductDetails.name}
+        keyExtractor={(ProductDetails) => ProductDetails.id}
         renderItem={({ item }) => {
             return (
             <View>

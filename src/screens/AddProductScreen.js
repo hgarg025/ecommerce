@@ -1,11 +1,10 @@
 import React , {useState, useContext} from 'react';
-import { Button, View, Text, StyleSheet, TextInput, ImageButton, FlatList} from 'react-native';
+import { Button, View, Text, StyleSheet, TextInput, ImageButton, FlatList, ScrollView} from 'react-native';
 import {Input} from 'react-native-elements';
 import DatePicker from '../components/DatePicker';
 import {withNavigation} from 'react-navigation';
 import AppContext from '../context/AppContext';
 import RNPickerSelect from 'react-native-picker-select';
-import { ScrollView } from 'react-native-gesture-handler';
 
 const AddProductScreen = ({navigation, category}) => {
   
@@ -19,7 +18,7 @@ const [productCategory, setProductCategory] = useState('');
 
 	return(
     <ScrollView>
-        <View>  
+  
         <View style = {{height:200,backgroundColor: 'grey'}}>
 
         </View>
@@ -51,12 +50,10 @@ const [productCategory, setProductCategory] = useState('');
         <DatePicker productEdate={productEdate} setProductEdate={setProductEdate} />
         <Button title="Submit" onPress = {() => {
             setProductDetails([...productDetails,
-            {name : productName, price : productPrice, quantity : productQuantity, edate : productEdate, category : productCategory}
+            {name : productName, price : productPrice, quantity : productQuantity, edate : productEdate, category : productCategory, id : (Math.floor(Math.random() * 99999)).toString()}
             ])
             navigation.pop()
             }}/>
-        
-        </View>
     </ScrollView>
     );
 }
