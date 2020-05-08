@@ -61,6 +61,8 @@ const [productCategory, setProductCategory] = useState('');
     );
 }
 
+
+
 const styles = StyleSheet.create({
 	
 });
