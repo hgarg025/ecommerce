@@ -2,6 +2,9 @@ import React,{useState} from 'react'
 import {Text,View,StyleSheet,Button,TouchableOpacity} from 'react-native'
 import { AntDesign } from '@expo/vector-icons'; 
 import ShopList from './ShopList';
+import {Feather} from '@expo/vector-icons'
+import DrawerNavigator from '../components/AppDrawer'
+import {createDrawerNavigator} from 'react-navigation'
 
 const CustomerScreen = function({navigation}){
 
@@ -44,6 +47,36 @@ const CustomerScreen = function({navigation}){
     )
 }
 
+
+CustomerScreen.navigationOptions = function({navigation}){
+
+    return {
+        title: 'Customer',
+        headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        headerRight: ()=> <TouchableOpacity
+            onPress ={ function(){
+                navigation.navigate('Cart')
+            }}
+        >
+            <AntDesign 
+                style = {{paddingRight: 10}}
+                name="shoppingcart" 
+                size={24} 
+                color="black" 
+            />
+
+
+        </TouchableOpacity>
+         
+
+    }
+}
 const styles = StyleSheet.create({
 
     topBar :{

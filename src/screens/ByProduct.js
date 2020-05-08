@@ -40,6 +40,21 @@ const ByProduct = function({navigation}){
     )
 }
 
+ByProduct.navigationOptions = function({navigation}){
+
+    return {
+        title: 'Products',
+        headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+         
+
+    }
+}
 const styles = StyleSheet.create({
 
 })
