@@ -1,5 +1,5 @@
 import React , {useContext} from 'react';
-import AppContext from '../context/AppContext';
+import AppContext from '../../context/AppContext';
 import { View, Text, StyleSheet, Button} from 'react-native';
 
 const EditScreen = ({navigation}) => {

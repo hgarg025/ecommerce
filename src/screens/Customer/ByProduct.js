@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import {Text,View,StyleSheet,TouchableOpacity,FlatList} from 'react-native'
-import AppContext from '../context/AppContext'
+import AppContext from '../../context/AppContext'
 import { withNavigation } from 'react-navigation';
 
 const ByProduct = function({navigation}){

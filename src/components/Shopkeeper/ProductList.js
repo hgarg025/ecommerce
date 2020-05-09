@@ -1,9 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import ProductScreen from '../screens/ProductScreen';
+
 import { withNavigation } from 'react-navigation';
-import SoldScreen from '../screens/SoldScreen';
-import OrderScreen from '../screens/OrderScreen';
 
 const ProductList = ( {title, navigation}) => {
 

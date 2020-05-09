@@ -3,8 +3,8 @@ import {Text,View,StyleSheet,FlatList,TouchableOpacity,Button} from 'react-nativ
 
 import {Input} from 'react-native-elements';
 import {withNavigation} from 'react-navigation'
-import AppContext from '../context/AppContext'
-import { TextInput } from 'react-native-gesture-handler'
+import AppContext from '../../context/AppContext'
+
 const ProductDetail = function({navigation}){
 
     const [qty,setQty] = useState('')

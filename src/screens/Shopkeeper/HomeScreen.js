@@ -1,7 +1,7 @@
 import React , {useContext, useState} from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 import { Slider } from 'react-native-elements';
-import ProductList from '../components/ProductList';
+import ProductList from '../../components/Shopkeeper/ProductList';
 
 const HomeScreen = () => {
 

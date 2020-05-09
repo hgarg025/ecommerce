@@ -1,11 +1,11 @@
 import React , {useState, useContext} from 'react';
 import { Button, View, Text, StyleSheet, TextInput, ImageButton, FlatList, ScrollView} from 'react-native';
 import {Input} from 'react-native-elements';
-import DatePicker from '../components/DatePicker';
+import DatePicker from '../../components/Shopkeeper/DatePicker';
 import {withNavigation} from 'react-navigation';
-import AppContext from '../context/AppContext';
+import AppContext from '../../context/AppContext';
 import RNPickerSelect from 'react-native-picker-select';
-import ProductDetail from './ProductDetail';
+import ProductDetail from '../Customer/ProductDetail';
 
 const AddProductScreen = ({navigation}) => {
   
