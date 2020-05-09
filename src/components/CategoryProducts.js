@@ -23,7 +23,6 @@ if(!ProductDetails.length){
             <Text>{item.price}</Text>
             <Text>{item.quantity}</Text>
             <Text>{item.edate}</Text>
-            <Text>{item.id}</Text>
             </View>
             </TouchableOpacity>
             );
