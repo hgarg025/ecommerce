@@ -79,6 +79,8 @@ const [productCategory, setProductCategory] = useState(category);
     );
 }
 
+
+
 const styles = StyleSheet.create({
 	
 });

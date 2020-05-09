@@ -1,33 +1,38 @@
-import React from 'react'
-import {Text,View,StyleSheet,Button,FlatList} from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import React,{useContext} from 'react'
+import {Text,View,StyleSheet,Button,FlatList,TouchableOpacity,ScrollView} from 'react-native'
 
+import AppContext from '../context/AppContext'
 const CartScreen = function(){
 
-    return (
+    const {purchaseDetails,setPurchaseDetails} = useContext(AppContext);
+
+     return (
         <View style ={styles.Container}>
-            <ScrollView >
-            <View>
-            <Text style ={{fontSize:50}}> Text Screen1</Text>
-            <Text style ={{fontSize:50}}> Text Screen2</Text>
-            <Text style ={{fontSize:50}}> Text Screen3</Text>
-            <Text style ={{fontSize:50}}> Text Screen4</Text>
+            
+           
+            <FlatList
+                data = {purchaseDetails}
+                keyExtractor = {function(purchaseDetails){
+                    return purchaseDetails.id
+                }}
 
-            <Text style ={{fontSize:50}}> Text Screen9</Text>
+                renderItem = {function({item}){
+                    return(
 
-            <Text style ={{fontSize:50}}> Text Screen1</Text>
-            <Text style ={{fontSize:50}}> Text Screen2</Text>
-            <Text style ={{fontSize:50}}> Text Screen2</Text>
-            <Text style ={{fontSize:50}}> Text Screen3</Text>
-            <Text style ={{fontSize:50}}> Text Screen4</Text>
+                        <View style = {{height:150}}>
+                        
+                        
+                        <Text>NAME: {item.name} - </Text>
+                        <Text>PRICE: ₹ {item.price}</Text>
+                        <Text>ID:  {item.id}</Text>
+                        <Text>QTY:  {item.quantity}</Text>
+                        <Text>COST: {item.cost} </Text>
+                        </View>
+                    
+                    )
+                }}
+            />
 
-            <Text style ={{fontSize:50}}> Text Screen9</Text>
-            <Text style ={{fontSize:50}}> Text Screen3</Text>
-            <Text style ={{fontSize:50}}> Text Screen4</Text>
-
-        
-            </View>
-            </ScrollView>
             <View style = {styles.bottom}>
                 <Text>Total: </Text>
                 <Button
