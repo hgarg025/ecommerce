@@ -1,36 +1,34 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {Text,View,StyleSheet,TouchableOpacity,FlatList} from 'react-native'
-
+import AppContext from '../context/AppContext'
+import { withNavigation } from 'react-navigation';
 
 const ByProduct = function({navigation}){
 
-    const prods = [
-        {name: 'prod1', id: 1},
-        {name: 'prod2', id: 2},
-        {name: 'prod3', id: 3},
-        {name: 'prod4', id: 4},
-        {name: 'prod5', id: 5},
-    ]
-
+    const {productDetails} = useContext(AppContext)
+    console.log(productDetails.length)
     return (
         <View>
         <FlatList
-            data = {prods}
-            keyExtractor = {function(prods){
-                return prods.name
+            data = {productDetails}
+            keyExtractor = {function(productDetails){
+                return productDetails.id
             }}
 
             renderItem = {function({item}){
                 return(
                     <TouchableOpacity
                         onPress={function(){
-                            navigation.navigate('ProductD')
+                            navigation.navigate('ProductD',{id: item.id})
                         }}
                     >
-                        <View style = {{height:200,backgroundColor: 'grey'}}>
+                        <View style = {{height:80}}>
+                        
+                        
+                        <Text>NAME: {item.name} - </Text>
+                        <Text style = {styles.price}>PRICE: ₹ {item.price}</Text>
+                        <Text style>ID:  {item.id}</Text>
                         </View>
-                    <Text>{item.name}</Text>
-
                     </TouchableOpacity>
                 )
             }}
@@ -57,6 +55,9 @@ ByProduct.navigationOptions = function({navigation}){
 }
 const styles = StyleSheet.create({
 
+    price: {
+        color: '#f44336'
+    }
 })
 
-export default ByProduct
+export default withNavigation(ByProduct)

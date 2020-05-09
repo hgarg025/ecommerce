@@ -17,13 +17,14 @@ const filterResultsByCategories = (title) => {
 
     return(
     <View>  
-    <View style={styles.components}>
-    <Text>{title}</Text> 
-    <TouchableOpacity onPress={ () => navigation.navigate('AddProduct', { category : title })}>
-    <AntDesign name="pluscircle" size={20}/>
-    </TouchableOpacity>
-    </View>
-    <CategoryProducts ProductDetails={filterResultsByCategories(title)} category={title}/>
+        <View style={styles.components}>
+            <Text>{title}</Text> 
+            <TouchableOpacity onPress={ function(){ 
+                navigation.navigate('AddProduct', { category : title })}}>
+                <AntDesign name="pluscircle" size={20}/>
+            </TouchableOpacity>
+        </View>
+        <CategoryProducts ProductDetails={filterResultsByCategories(title)} category={title}/>
     </View>
     );
 }
