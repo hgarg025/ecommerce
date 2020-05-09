@@ -19,7 +19,7 @@ const filterResultsByCategories = (title) => {
     <View>  
     <View style={styles.components}>
     <Text>{title}</Text> 
-    <TouchableOpacity onPress={ () => navigation.navigate('AddProduct', { category : title })}>
+    <TouchableOpacity onPress={ () => navigation.navigate('AddProduct')}>
     <AntDesign name="pluscircle" size={20}/>
     </TouchableOpacity>
     </View>
