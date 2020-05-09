@@ -5,30 +5,45 @@ import DatePicker from '../components/DatePicker';
 import {withNavigation} from 'react-navigation';
 import AppContext from '../context/AppContext';
 import RNPickerSelect from 'react-native-picker-select';
+import ProductDetail from './ProductDetail';
 
-const AddProductScreen = ({navigation, category}) => {
+const AddProductScreen = ({navigation}) => {
   
 const {productDetails, setProductDetails} = useContext(AppContext);
+const id = navigation.getParam('id');
+const rid = (Math.floor(Math.random() * 99999)).toString()
+ 
+var name = ''
+var category = ''
+var price = ''
+var quantity = ''
+var edate = 598051730000
+var flag = 0;
 
-const [productName,setProductName] =useState('');
-const [productPrice,setProductPrice] =useState('');
-const [productQuantity,setProductQuantity] =useState('');
-const [productEdate,setProductEdate] =useState('');
-const [productCategory, setProductCategory] = useState('');
+for(let i=0;i<productDetails.length;i++)
+    {
+        if(productDetails[i].id == id)
+        {
+            flag=1
+             name = productDetails[i].name
+             category = productDetails[i].category
+             price = productDetails[i].price
+             quantity = productDetails[i].quantity
+             edate = productDetails[i].edate
+        }
+    }
+
+
+
+
+const [productName,setProductName] =useState(name);
+const [productPrice,setProductPrice] =useState(price);
+const [productQuantity,setProductQuantity] =useState(quantity);
+const [productEdate,setProductEdate] =useState(edate);
+const [productCategory, setProductCategory] = useState(category);
 
 	return(
-    <ScrollView>
-  
-        <View style = {{height:200,backgroundColor: 'grey'}}>
-
-        </View>
-        <View style = {{flexDirection: 'row', justifyContent: 'space-evenly'}}>
-            <Text>Select picture from</Text>
-            <Button title ="Gallery"/>
-            <Text> or </Text>
-            <Button title = "Camera"/>
-        </View>
-        
+    <ScrollView>       
         <Text>Product Name</Text>
         <Input placeholder='Product Name' value={productName} onChangeText={(text) => setProductName(text)} />
         <Text>Category</Text>
@@ -43,16 +58,22 @@ const [productCategory, setProductCategory] = useState('');
                 ]}
             />
         <Text>Product Price (in Rupees)</Text>
-        <Input placeholder='Product Price' keyboardType={'numeric'} value={productPrice} onChangeText={(text) => setProductPrice(text)} />
+        <Input placeholder='Product Name' keyboardType={'numeric'} value={productPrice} onChangeText={(text) => setProductPrice(text)} />
         <Text>Quantity</Text>
         <Input placeholder='Quantity' keyboardType={'numeric'} value={productQuantity} onChangeText={(text) => setProductQuantity(text)} />
         <Text>Expiry Date</Text>
         <DatePicker productEdate={productEdate} setProductEdate={setProductEdate} />
         <Button title="Submit" onPress = {() => {
+     
+            if(flag) {
+            setProductDetails(productDetails.map( function (item) { return item.id === id ? {name : productName, price : productPrice, quantity : productQuantity, edate : productEdate, category : productCategory, id : id } : item } ));
+        }
+            else {
             setProductDetails([...productDetails,
-            {name : productName, price : productPrice, quantity : productQuantity, edate : productEdate, category : productCategory, id : (Math.floor(Math.random() * 99999)).toString()}
+            {name : productName, price : productPrice, quantity : productQuantity, edate : productEdate, category : productCategory, id : rid }
             ])
-            navigation.pop()
+        }
+            navigation.navigate('Products')
             }}/>
     </ScrollView>
     );

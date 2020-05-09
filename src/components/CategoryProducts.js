@@ -19,12 +19,11 @@ if(!ProductDetails.length){
             return (
                 <TouchableOpacity onPress={ () => navigation.navigate('Edit', { ID : item.id  })}>
             <View>
-            <Text>NAME: {item.name}</Text>
-            <Text>PRICE: {item.price}</Text>
-            <Text>QTY: {item.quantity}</Text>
-            <Text>EXPIRY:{item.edate}</Text>
-            <Text>ID:{item.id}</Text>
-            
+            <Text>{item.name}</Text>
+            <Text>{item.price}</Text>
+            <Text>{item.quantity}</Text>
+            <Text>{item.edate}</Text>
+            <Text>{item.id}</Text>
             </View>
             </TouchableOpacity>
             );

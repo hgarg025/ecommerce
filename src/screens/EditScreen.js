@@ -16,7 +16,10 @@ const EditScreen = ({navigation}) => {
     <Text>{productDetails[i].price}</Text>
     <Text>{productDetails[i].quantity}</Text>
     <Text>{productDetails[i].edate}</Text>
-    <Button title="Edit" />
+    <Text>{productDetails[i].id}</Text>
+    <Button title="Edit" 
+    onPress={ () => navigation.navigate('AddProduct', { id : id })}
+    />
     <Button title="Delete" onPress = { () => 
         {
             setProductDetails(productDetails.filter(item => item.id !== id));
@@ -28,6 +31,7 @@ const EditScreen = ({navigation}) => {
     }
     return(
         <View>
+            <Text>nothing to show</Text>
         </View>
     )
 }
