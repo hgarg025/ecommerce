@@ -2,9 +2,6 @@ import React,{useState} from 'react'
 import {Text,View,StyleSheet,Button,TouchableOpacity} from 'react-native'
 import { AntDesign } from '@expo/vector-icons'; 
 import ShopList from './ShopList';
-import {Feather} from '@expo/vector-icons'
-import DrawerNavigator from '../components/AppDrawer'
-import {createDrawerNavigator} from 'react-navigation'
 
 const CustomerScreen = function({navigation}){
 

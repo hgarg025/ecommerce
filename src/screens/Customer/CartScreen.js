@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import {Text,View,StyleSheet,Button,FlatList,TouchableOpacity,ScrollView} from 'react-native'
 
-import AppContext from '../context/AppContext'
+import AppContext from '../../context/AppContext'
 const CartScreen = function(){
 
     const {purchaseDetails,setPurchaseDetails} = useContext(AppContext);

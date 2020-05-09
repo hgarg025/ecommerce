@@ -2,9 +2,9 @@ import React , {useState, useContext} from 'react';
 import { View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {AntDesign} from '@expo/vector-icons'; 
 import { withNavigation } from 'react-navigation';
-import AddProduct from '../screens/AddProductScreen';
+
 import CategoryProducts from './CategoryProducts';
-import AppContext from '../context/AppContext';
+import AppContext from '../../context/AppContext';
 
 const Categories = ({title, navigation}) => {
     const {productDetails, setProductDetails} = useContext(AppContext);

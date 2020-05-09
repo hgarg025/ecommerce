@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, Text, StyleSheet} from 'react-native';
-import Categories from '../components/Categories';
+import Categories from '../../components/Shopkeeper/Categories';
 const ProductScreen = () => {
 	return(
     <ScrollView>
