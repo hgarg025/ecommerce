@@ -6,24 +6,59 @@ const IndexScreen = function({navigation}){
 
 
     return (
-        <View>
-            <Button
+        
+        <View style={styles.container}>
+            <View style={styles.button}>
+            <Button 
                 title = "Customer"
                 onPress = {function(){
                     navigation.navigate('Customer')
                 }}
             />
-
-            <Button
+            </View>
+            <View style={styles.button}>
+            <Button 
                 title = "Shopkeeper"
                 onPress = {function(){
                     navigation.navigate('Home')
                 }}
             />
+            </View>
         </View>
     )
 }
 
-const styles = StyleSheet.create({})
+IndexScreen.navigationOptions = function({navigation}){
+
+    return {
+        title: 'E-Commerce App',
+        headerStyle: 
+        {
+            
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle:
+           {
+            fontWeight: 'bold',
+          }        
+
+    }
+}
+
+const styles = StyleSheet.create({
+    container : {
+        flex: 1,
+        justifyContent:'center',
+        backgroundColor: 'orange'
+    },
+    button : {
+        margin : 50,
+        borderRadius : 5,
+        borderWidth : 10,
+        borderColor : '#f4511e',
+        elevation : 10
+    }
+})
 
 export default IndexScreen

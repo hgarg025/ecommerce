@@ -23,11 +23,17 @@ const styles = StyleSheet.create({
   	justifyContent: 'center',
   	borderColor: 'black',
 		borderWidth: 2,
-		margin: 20
+    margin: 20,
+    borderRadius : 20,
+    backgroundColor : '#f4511e',
+    elevation : 15
+    
   },
   matter: {
-   fontSize: 65,
-   margin: 20
+   fontSize: 60,
+   margin: 20,
+   textAlign : 'center',
+   color : 'white'
   }
 });
 

@@ -43,10 +43,10 @@ const [productEdate,setProductEdate] =useState(edate);
 const [productCategory, setProductCategory] = useState(category);
 
 	return(
-    <ScrollView>       
-        <Text>Product Name</Text>
-        <Input placeholder='Product Name' value={productName} onChangeText={(text) => setProductName(text)} />
-        <Text>Category</Text>
+    <ScrollView style={styles.container}>       
+        <Text style={ styles.text}>Product Name</Text>
+        <Input placeholder='Product Name' placeholderTextColor="white" value={productName} onChangeText={(text) => setProductName(text)} />
+        <Text style={ styles.text}>Category</Text>
         <RNPickerSelect
                 onValueChange={(value) => setProductCategory(value)}
                 items={[
@@ -57,12 +57,15 @@ const [productCategory, setProductCategory] = useState(category);
                         { label: 'category 5', value: 'category 5' },
                 ]}
             />
-        <Text>Product Price (in Rupees)</Text>
-        <Input placeholder='Product Name' keyboardType={'numeric'} value={productPrice} onChangeText={(text) => setProductPrice(text)} />
-        <Text>Quantity</Text>
-        <Input placeholder='Quantity' keyboardType={'numeric'} value={productQuantity} onChangeText={(text) => setProductQuantity(text)} />
-        <Text>Expiry Date</Text>
+        <Text style={ styles.text}>Product Price (in Rupees)</Text>
+        <Input placeholder='Product Name' placeholderTextColor="white" keyboardType={'numeric'} value={productPrice} onChangeText={(text) => setProductPrice(text)} />
+        <Text style={ styles.text}>Quantity</Text>
+        <Input placeholder='Quantity' placeholderTextColor="white" keyboardType={'numeric'} value={productQuantity} onChangeText={(text) => setProductQuantity(text)} />
+        <Text style={ styles.text}>Expiry Date</Text>
+        <View stytle={styles.date}>
         <DatePicker productEdate={productEdate} setProductEdate={setProductEdate} />
+        </View>
+        <View style={styles.submit}>
         <Button title="Submit" onPress = {() => {
      
             if(flag) {
@@ -75,14 +78,46 @@ const [productCategory, setProductCategory] = useState(category);
         }
             navigation.navigate('Products')
             }}/>
+            </View>
     </ScrollView>
     );
 }
 
+AddProductScreen.navigationOptions = function({navigation}){
 
+    return {
+        title: 'Product Details',
+        headerStyle: 
+        {
+            
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle:
+           {
+            fontWeight: 'bold',
+          }        
+
+    }
+}
 
 const styles = StyleSheet.create({
-	
+container :{
+    backgroundColor : 'orange'
+}	,
+text : {
+    fontSize : 20,
+    fontWeight : "bold",
+    margin : 5
+},
+submit : {
+    marginHorizontal :30,
+    marginVertical : 20,
+    borderWidth : 10,
+    borderRadius : 5,
+    borderColor : '#f4511e'
+}
 });
+
 
 export default withNavigation(AddProductScreen);
