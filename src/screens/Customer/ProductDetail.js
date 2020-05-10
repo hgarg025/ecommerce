@@ -1,33 +1,66 @@
 import React, {useContext,useState} from 'react'
 import {Text,View,StyleSheet,FlatList,TouchableOpacity,Button} from 'react-native'
-
+import { Feather } from '@expo/vector-icons'; 
 import {Input} from 'react-native-elements';
 import {withNavigation} from 'react-navigation'
 import AppContext from '../../context/AppContext'
 
 const ProductDetail = function({navigation}){
 
-    const [qty,setQty] = useState('')
+    const [qty,setQty] = useState(0)
     const [cost,setCost] = useState('')
     const {productDetails , setProductDetails,purchaseDetails,setPurchaseDetails} = useContext(AppContext);
 
     const blogPost = productDetails.find((blogPost)=> blogPost.id===navigation.getParam('id'))
 
+
+    
+
     return(
         <View>
-            <Text>Name: {blogPost.name}</Text>
-            <Text>Price: {blogPost.price}</Text>
-            <Text>Quantity: {blogPost.quantity}</Text>
-           
-            <Text>Enter Quantity</Text>
-            <Input 
-                placeholder='Quantity' 
-                keyboardType={'numeric'} 
-                value={qty} 
-                onChangeText={function(text) { 
-                    setQty(text)}} />
-            {/* <Text>{qty}</Text> */}
-            <Button
+            <View style = {styles.basicDetails}>
+                <Text style= {{fontSize:18, fontWeight: 'bold'}}>
+                    {blogPost.name}
+                </Text>
+                <Text style = {{fontWeight: 'bold', fontSize: 18 ,color: 'red'}}>
+                    ₹{blogPost.price}
+                </Text>
+               
+            </View>
+            <Text>Available Quantity: {blogPost.quantity}</Text>
+            <Text> Total Price : {qty*blogPost.price}</Text>
+            <View style = {styles.quantityDetails}>
+
+                <Text style = {{alignContent: 'space-between'}}>Selected Quantity: </Text>
+                <View style = {{flexDirection: 'row'}}>
+               
+                    <Feather 
+                        name="minus" 
+                        size={24} 
+                        color="black"
+                        style = {{borderWidth: 1, borderColor: 'grey'}}
+                        onPress = {function(){
+                        
+                            (qty-1<0)? null: setQty(qty-1)      
+                        }}    
+                       
+                    />
+
+                    <Text style = {{borderWidth: 1, borderColor: 'grey' ,fontSize: 20}}>  {qty}  </Text>
+                    <Feather 
+                        name="plus" 
+                        size={24} 
+                        color="black" 
+                        style = {{borderWidth: 1, borderColor: 'grey'}}
+                        onPress = {function(){
+                            
+                            (qty+1>blogPost.quantity)? null: setQty(qty+1)      
+                        }}    
+                    />
+                    
+                </View>
+
+                <Button
                 title = "ADD TO CART"
                 onPress = {function(){
                     setPurchaseDetails([...purchaseDetails,
@@ -51,9 +84,11 @@ const ProductDetail = function({navigation}){
                             : item 
                         } ));
 
-                    navigation.pop()
-                }}
-            />
+                         navigation.pop()
+                    }}
+                />
+            </View>
+            
 
             
     
@@ -63,6 +98,22 @@ const ProductDetail = function({navigation}){
 
 
 const styles = StyleSheet.create({
+
+    basicDetails:{
+        marginVertical: 20,
+        marginHorizontal: 10,
+        //borderColor: 'grey',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        //borderWidth: 2
+    },
+    quantityDetails:{
+
+        flexDirection: 'row',
+        borderColor: 'grey',
+        borderWidth: 2,
+        justifyContent: 'space-around'
+    }
 
 })
 
