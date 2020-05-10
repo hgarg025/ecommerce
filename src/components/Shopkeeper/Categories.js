@@ -16,11 +16,11 @@ const filterResultsByCategories = (title) => {
 };
 
     return(
-    <View>  
+    <View style={styles.container}>  
     <View style={styles.components}>
-    <Text>{title}</Text> 
+    <Text style={styles.title}>{title}</Text> 
     <TouchableOpacity onPress={ () => navigation.navigate('AddProduct')}>
-    <AntDesign name="pluscircle" size={20}/>
+    <AntDesign name="pluscircle" size={35}/>
     </TouchableOpacity>
     </View>
     <CategoryProducts ProductDetails={filterResultsByCategories(title)} category={title}/>
@@ -30,10 +30,21 @@ const filterResultsByCategories = (title) => {
 
 const styles = StyleSheet.create({
     components: {
-        margin: 10,
         flex: 1,
         justifyContent: 'space-between',
-        flexDirection : 'row'
+        flexDirection : 'row',
+        borderColor : '#f4511e',
+      borderWidth : 3,
+      padding : 10,
+      marginBottom : 10
+  },
+  container : {
+      
+      margin : 10
+  },
+  title : {
+      fontSize : 25,
+      fontWeight : "bold"
   }
 });
 

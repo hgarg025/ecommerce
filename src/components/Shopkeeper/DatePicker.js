@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text,View, Button, Platform} from 'react-native';
+import {Text,View, Button, Platform, StyleSheet} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 const DatePicker = ({productEdate,setProductEdate}) => {
@@ -27,8 +27,8 @@ const DatePicker = ({productEdate,setProductEdate}) => {
   };
 
   return (
-    <View>
-      <View>
+    <View >
+      <View style={styles.container}>
         <Button onPress={showDatepicker} title="Select Expiry date" />
       </View>
       {show && (
@@ -42,9 +42,29 @@ const DatePicker = ({productEdate,setProductEdate}) => {
           onChange={onChange}
         />
       )}
-    <Text>{productEdate}</Text>
+      <Text style={styles.text1}>You Selected</Text>
+    <Text style={styles.text2}>{productEdate}</Text>
     </View>
   );
 };
+
+const styles= StyleSheet.create({
+  container : {
+    marginHorizontal : 80,
+    marginVertical : 10,
+    borderRadius : 5,
+    borderWidth : 2
+  },
+  text1 :{
+    textAlign : 'center',
+    fontSize : 17,
+    fontWeight : "900"
+  },
+  text2 :{
+    textAlign : 'center',
+    fontSize : 24,
+    fontWeight : "bold"
+  }
+})
 
 export default DatePicker;

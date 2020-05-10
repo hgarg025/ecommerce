@@ -9,7 +9,7 @@ if(!ProductDetails.length){
     }
  
  	return(
-    <View>
+    <View style={styles.container}>
     <FlatList 
     horizontal
         showsHorizontalScrollIndicator={false}
@@ -18,12 +18,12 @@ if(!ProductDetails.length){
         renderItem={({ item }) => {
             return (
                 <TouchableOpacity onPress={ () => navigation.navigate('Edit', { ID : item.id  })}>
-            <View>
-            <Text>{item.name}</Text>
-            <Text>{item.price}</Text>
-            <Text>{item.quantity}</Text>
-            <Text>{item.edate}</Text>
-            <Text>{item.id}</Text>
+            <View style={styles.results}>
+            <Text style={styles.text}>{item.name}</Text>
+            <Text style={styles.text}>{item.price}</Text>
+            <Text style={styles.text}>{item.quantity}</Text>
+            <Text style={styles.text}>{item.edate}</Text>
+            <Text style={styles.text}>{item.id}</Text>
             </View>
             </TouchableOpacity>
             );
@@ -33,6 +33,20 @@ if(!ProductDetails.length){
 	);
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container : {
+        borderColor : '#f4511e',
+      borderWidth : 2,
+      padding : 15,
+    },
+    results : {
+        marginHorizontal : 10
+    },
+    text : {
+        fontSize : 15,
+        fontWeight : "bold",
+        marginBottom : 5
+    }
+});
 
 export default withNavigation(CategoryProducts);

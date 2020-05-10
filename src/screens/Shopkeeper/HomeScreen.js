@@ -10,8 +10,8 @@ const HomeScreen = () => {
     return(
     <View style={styles.basic} >
     <ProductList title="Products" />
-    <ProductList title="Sold" />
     <ProductList title="Orders" />
+    <ProductList title="Sold" />
     <Slider style={styles.slider} 
     maximumValue={5}
     minimumValue={0}
@@ -19,27 +19,55 @@ const HomeScreen = () => {
     value={value}
     onValueChange={(val) => setValue(val)}
     />
-    <Text style={styles.value}>Delivery Distance</Text>
-    <Text style={styles.value}>{value} km</Text>
+    <Text style={styles.value1}>Delivery Distance</Text>
+    <Text style={styles.value2}>{value} km</Text>
     </View>
 	);
 }
 
+HomeScreen.navigationOptions = function({navigation}){
+
+    return {
+        title: 'Shopkeeper',
+        headerStyle: 
+        {
+            
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle:
+           {
+            fontWeight: 'bold',
+          }        
+
+    }
+}
+
+
 const styles = StyleSheet.create({
 	slider : {
-		borderColor: 'red',
-		borderWidth: 2,
-		margin: 20
+		borderColor: '#f4511e',
+		borderWidth: 3,
+		margin: 20,
+		borderRadius : 15
 	},
 	basic: {
 		flex: 1,
 		justifyContent: 'space-between',
-		marginBottom: 100
+		backgroundColor : 'orange'
 	},
-	value : {
+	value1 : {
 		textAlign : 'center',
 		fontSize : 20,
-		fontWeight : "900"
+		fontWeight : "bold",
+		color : 'white'
+	},
+	value2 : {
+		textAlign : 'center',
+		fontSize : 30,
+		fontWeight : "bold",
+		marginBottom : 60,
+		color : 'white'
 	}
 
 });
