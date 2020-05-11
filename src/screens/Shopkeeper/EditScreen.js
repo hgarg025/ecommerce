@@ -1,6 +1,6 @@
 import React , {useContext} from 'react';
 import AppContext from '../../context/AppContext';
-import { View, Text, StyleSheet, Button} from 'react-native';
+import { View, Text, StyleSheet, Button, Image, ScrollView} from 'react-native';
 
 const EditScreen = ({navigation}) => {
     const id = navigation.getParam('ID');
@@ -10,8 +10,9 @@ const EditScreen = ({navigation}) => {
         if(productDetails[i].id == id)
         {
             return (
-                <View style={styles.container}>
+                <ScrollView style={styles.container}>
     <Text style={styles.text}>{productDetails[i].category}</Text>
+    <Image source={{ uri : productDetails[i].image}} style={{ marginLeft : 30, width: 300, height: 250 }} />
     <Text style={styles.text}>{productDetails[i].name}</Text>
     <Text style={styles.text}>{productDetails[i].price}</Text>
     <Text style={styles.text}>{productDetails[i].quantity}</Text>
@@ -29,7 +30,7 @@ const EditScreen = ({navigation}) => {
             navigation.pop()
         }}/>
         </View>
-    </View>
+    </ScrollView>
             )
         }
     }

@@ -72,6 +72,7 @@ const ProductDetail = function({navigation}){
                             cost: qty*blogPost.price.toString()
                         }
                         ])
+                        navigation.pop()
                     }}
                 />
             </View>

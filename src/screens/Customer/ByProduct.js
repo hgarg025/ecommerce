@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import {Text,View,StyleSheet,TouchableOpacity,FlatList} from 'react-native'
+import {Text,View,StyleSheet,TouchableOpacity,FlatList,Image} from 'react-native'
 import AppContext from '../../context/AppContext'
 import { withNavigation } from 'react-navigation';
 import { AntDesign } from '@expo/vector-icons'; 
@@ -23,9 +23,11 @@ const ByProduct = function({navigation}){
                             navigation.navigate('ProductD',{id: item.id})
                         }}
                     >
-                        <View style = {{height:80}}>
+                        <View>
                         
                         
+                        <Image source={{ uri : item.image}} style={{ width: 300, height: 250 }} />
+                        <Text>{item.image}</Text>
                         <Text>NAME: {item.name} - </Text>
                         <Text style = {styles.price}>PRICE: ₹ {item.price}</Text>
                         <Text style>ID:  {item.id}</Text>

@@ -7,7 +7,6 @@ import SoldScreen from './src/screens/Shopkeeper/SoldScreen';
 import OrderScreen from './src/screens/Shopkeeper/OrderScreen';
 import AddProductScreen from './src/screens/Shopkeeper/AddProductScreen';
 import {AppProvider} from './src/context/AppContext';
-import ImageSelect from './src/components/Shopkeeper/ImageSelect'
 import IndexScreen from './src/screens/IndexScreen'
 import CustomerScreen from './src/screens/Customer/CustomerScreen'
 import ShopList from './src/screens/Customer/ShopList'
@@ -24,7 +23,6 @@ const navigator = createStackNavigator(
    Sold : SoldScreen,
    Orders : OrderScreen,
    AddProduct : AddProductScreen,
-   Camera: ImageSelect,
    Customer: CustomerScreen,
    Index: IndexScreen,
    Shops: ShopList,
