@@ -4,10 +4,11 @@ import { Feather } from '@expo/vector-icons';
 import {Input} from 'react-native-elements';
 import {withNavigation} from 'react-navigation'
 import AppContext from '../../context/AppContext'
+import { AntDesign } from '@expo/vector-icons'; 
 
 const ProductDetail = function({navigation}){
 
-    const [qty,setQty] = useState(0)
+    const [qty,setQty] = useState(1)
     const [cost,setCost] = useState('')
     const {productDetails , setProductDetails,purchaseDetails,setPurchaseDetails} = useContext(AppContext);
 
@@ -41,7 +42,7 @@ const ProductDetail = function({navigation}){
                         style = {{borderWidth: 1, borderColor: 'grey'}}
                         onPress = {function(){
                         
-                            (qty-1<0)? null: setQty(qty-1)      
+                            (qty-1<1)? null: setQty(qty-1)      
                         }}    
                        
                     />
@@ -70,21 +71,8 @@ const ProductDetail = function({navigation}){
                             id : blogPost.id,
                             cost: qty*blogPost.price.toString()
                         }
-                    ])
-                    setProductDetails(productDetails.map( 
-                        function (item) { 
-                            return item.id === navigation.getParam('id') ? {
-                                name : blogPost.name, 
-                                price : blogPost.price, 
-                                quantity : (blogPost.quantity-qty).toString(),
-                                edate : blogPost.edate, 
-                                category : blogPost.category, 
-                                id : blogPost.id,
-                            } 
-                            : item 
-                        } ));
-
-                         navigation.pop()
+                        ])
+                        navigation.pop()
                     }}
                 />
             </View>
@@ -116,5 +104,35 @@ const styles = StyleSheet.create({
     }
 
 })
+
+ProductDetail.navigationOptions = function({navigation}){
+
+    return {
+        title: 'Customer',
+        headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        headerRight: ()=> <TouchableOpacity
+            onPress ={ function(){
+                navigation.navigate('Cart')
+            }}
+        >
+            <AntDesign 
+                style = {{paddingRight: 10}}
+                name="shoppingcart" 
+                size={24} 
+                color="black" 
+            />
+
+
+        </TouchableOpacity>
+         
+
+    }
+}
 
 export default withNavigation(ProductDetail)

@@ -15,6 +15,7 @@ import ProductDetail from './src/screens/Customer/ProductDetail'
 import ShopDetail from './src/screens/Customer/ShopDetail'
 import CartScreen from './src/screens/Customer/CartScreen'
 import EditScreen from './src/screens/Shopkeeper/EditScreen'
+import QuantityCounter from './src/components/Customer/QuantityCounter'
 const navigator = createStackNavigator(
 {
    Home : HomeScreen,
@@ -29,7 +30,8 @@ const navigator = createStackNavigator(
    ShopD: ShopDetail,
    ProductD: ProductDetail,
    Cart: CartScreen,
-   Edit : EditScreen
+   Edit : EditScreen,
+   
  
 },
 {
