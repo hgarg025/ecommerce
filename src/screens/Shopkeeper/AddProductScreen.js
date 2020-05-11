@@ -5,7 +5,6 @@ import DatePicker from '../../components/Shopkeeper/DatePicker';
 import {withNavigation} from 'react-navigation';
 import AppContext from '../../context/AppContext';
 import RNPickerSelect from 'react-native-picker-select';
-import ProductDetail from '../Customer/ProductDetail';
 import ImagePickerr from '../../components/Shopkeeper/ImagePicker';
 
 const AddProductScreen = ({navigation}) => {
@@ -16,8 +15,8 @@ const rid = (Math.floor(Math.random() * 99999)).toString()
  
 var name = ''
 var category = ''
-var price = ''
-var quantity = ''
+var price = 0
+var quantity = 0
 var edate = 598051730000
 var image = null
 var flag = 0;
@@ -64,9 +63,9 @@ const [productImage, setProductImage] = useState(image);
                 ]}
             />
         <Text style={ styles.text}>Product Price (in Rupees)</Text>
-        <Input placeholder='Product Name' placeholderTextColor="white" keyboardType={'numeric'} value={productPrice} onChangeText={(text) => setProductPrice(text)} />
+        <Input placeholder='Product Name' placeholderTextColor="white" keyboardType={'numeric'} value={productPrice.toString()} onChangeText={(text) => setProductPrice(text)} />
         <Text style={ styles.text}>Quantity</Text>
-        <Input placeholder='Quantity' placeholderTextColor="white" keyboardType={'numeric'} value={productQuantity} onChangeText={(text) => setProductQuantity(text)} />
+        <Input placeholder='Quantity' placeholderTextColor="white" keyboardType={'numeric'} value={productQuantity.toString()} onChangeText={(text) => setProductQuantity(text)} />
         <Text style={ styles.text}>Expiry Date</Text>
         <View stytle={styles.date}>
         <DatePicker productEdate={productEdate} setProductEdate={setProductEdate} />
