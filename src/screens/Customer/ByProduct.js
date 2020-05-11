@@ -2,6 +2,7 @@ import React,{useContext} from 'react'
 import {Text,View,StyleSheet,TouchableOpacity,FlatList} from 'react-native'
 import AppContext from '../../context/AppContext'
 import { withNavigation } from 'react-navigation';
+import { AntDesign } from '@expo/vector-icons'; 
 
 const ByProduct = function({navigation}){
 
@@ -49,6 +50,20 @@ ByProduct.navigationOptions = function({navigation}){
           headerTitleStyle: {
             fontWeight: 'bold',
           },
+        headerRight: ()=> <TouchableOpacity
+            onPress ={ function(){
+                navigation.navigate('Cart')
+            }}
+        >
+            <AntDesign 
+                style = {{paddingRight: 10}}
+                name="shoppingcart" 
+                size={24} 
+                color="black" 
+            />
+
+
+        </TouchableOpacity>
          
 
     }
