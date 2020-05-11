@@ -19,6 +19,7 @@ var category = ''
 var price = ''
 var quantity = ''
 var edate = 598051730000
+var image = null
 var flag = 0;
 
 for(let i=0;i<productDetails.length;i++)
@@ -31,6 +32,7 @@ for(let i=0;i<productDetails.length;i++)
              price = productDetails[i].price
              quantity = productDetails[i].quantity
              edate = productDetails[i].edate
+             image = productDetails[i].image
         }
     }
 
@@ -42,11 +44,12 @@ const [productPrice,setProductPrice] =useState(price);
 const [productQuantity,setProductQuantity] =useState(quantity);
 const [productEdate,setProductEdate] =useState(edate);
 const [productCategory, setProductCategory] = useState(category);
+const [productImage, setProductImage] = useState(image);
 
 	return(
     <ScrollView style={styles.container}>  
         <Text style={ styles.text}>Add Image</Text>
-        < ImagePickerr />  
+        < ImagePickerr productImage={productImage} setProductImage={setProductImage}/>  
         <Text style={ styles.text}>Product Name</Text>
         <Input placeholder='Product Name' placeholderTextColor="white" value={productName} onChangeText={(text) => setProductName(text)} />
         <Text style={ styles.text}>Category</Text>
@@ -72,11 +75,11 @@ const [productCategory, setProductCategory] = useState(category);
         <Button title="Submit" onPress = {() => {
      
             if(flag) {
-            setProductDetails(productDetails.map( function (item) { return item.id === id ? {name : productName, price : productPrice, quantity : productQuantity, edate : productEdate, category : productCategory, id : id } : item } ));
+            setProductDetails(productDetails.map( function (item) { return item.id === id ? {name : productName, price : productPrice, quantity : productQuantity, edate : productEdate, category : productCategory, id : id, image : productImage } : item } ));
         }
             else {
             setProductDetails([...productDetails,
-            {name : productName, price : productPrice, quantity : productQuantity, edate : productEdate, category : productCategory, id : rid }
+            {name : productName, price : productPrice, quantity : productQuantity, edate : productEdate, category : productCategory, id : rid, image : productImage }
             ])
         }
             navigation.navigate('Products')
