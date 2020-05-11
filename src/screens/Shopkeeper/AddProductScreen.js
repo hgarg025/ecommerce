@@ -6,6 +6,7 @@ import {withNavigation} from 'react-navigation';
 import AppContext from '../../context/AppContext';
 import RNPickerSelect from 'react-native-picker-select';
 import ProductDetail from '../Customer/ProductDetail';
+import ImagePickerr from '../../components/Shopkeeper/ImagePicker';
 
 const AddProductScreen = ({navigation}) => {
   
@@ -43,7 +44,9 @@ const [productEdate,setProductEdate] =useState(edate);
 const [productCategory, setProductCategory] = useState(category);
 
 	return(
-    <ScrollView style={styles.container}>       
+    <ScrollView style={styles.container}>  
+        <Text style={ styles.text}>Add Image</Text>
+        < ImagePickerr />  
         <Text style={ styles.text}>Product Name</Text>
         <Input placeholder='Product Name' placeholderTextColor="white" value={productName} onChangeText={(text) => setProductName(text)} />
         <Text style={ styles.text}>Category</Text>
